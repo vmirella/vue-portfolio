@@ -1,4 +1,10 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
 
+echo "Ejecutando pruebas unitarias..."
+yarn test:unit
+if [ $? -ne 0 ]; then
+  echo "❌ Pruebas unitarias fallaron. Corrige los errores antes de hacer commit."
+  exit 1
+fi
+
+echo "✅ Todo correcto. Procediendo con el commit..."
 npx lint-staged 
