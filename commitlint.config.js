@@ -18,5 +18,6 @@ export default {
         'revert',
       ],
     ],
+    'references-empty': [0],
   },
 }
